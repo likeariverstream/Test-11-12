@@ -1,0 +1,60 @@
+.main {
+  width: 1440px;
+  height: calc(1024px - 265px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.content {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(4, 305px);
+  grid-auto-rows: 263px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.button {
+  background: #FFFFFF;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 16px;
+  gap: 8px;
+  width: 170px;
+  height: 40px;
+  border: 1px solid #151317;
+  border-radius: 8px;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+  vertical-align: baseline;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 136.19%;
+  color: #151317;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.image {
+  background: url(../../images/arrow.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+}

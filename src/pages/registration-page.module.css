@@ -1,0 +1,9 @@
+.main {
+  max-width: 1440px;
+  min-height: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  margin: 0 auto;
+}

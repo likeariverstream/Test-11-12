@@ -1,0 +1,61 @@
+.main {
+  width: 375px;
+  height: calc(1284px - 265px);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 0;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.description {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 136.19%;
+  color: #151317;
+  margin: 49px auto 188px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  margin: 49px 16px 0;
+}
+
+.box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.phone {
+  background: url(../images/phone.svg) no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
+  width: 20px;
+  height: 20px;
+  border: 0;
+}
+
+.text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 136.19%;
+  color: #151317;
+  margin: 0 0 0 10px;
+}
+
+.mail {
+  background: url(../images/mail.svg) no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
+  width: 21px;
+  height: 15px;
+  border: 0;
+}

@@ -1,0 +1,10 @@
+.main {
+  width: 375px;
+  height: 812px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  margin: 0 auto;
+}
+
