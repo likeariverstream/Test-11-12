@@ -26,6 +26,10 @@
   opacity: 0.7;
 }
 
+.button:disabled {
+  background: rgba(103, 99, 99, 0.8)
+}
+
 .mobile {
   border: 0;
   display: flex;

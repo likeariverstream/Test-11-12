@@ -4,15 +4,16 @@ import MediaQuery from 'react-responsive';
 
 type TButton = {
   title: string
+  isValid?: boolean
 }
-export const Button: FC<TButton> = ({ title }) => {
+export const Button: FC<TButton> = ({ title, isValid }) => {
 
   return (
     <>
       <MediaQuery minWidth={500}>
-        <button className={styles.button}>{title}</button></MediaQuery>
+        <button disabled={isValid ? false : true} className={styles.button}>{title}</button></MediaQuery>
       <MediaQuery maxWidth={500}>
-        <button className={styles.mobile}>{title}</button>
+        <button disabled={isValid ? false : true} className={styles.mobile}>{title}</button>
       </MediaQuery>
     </>
   )
