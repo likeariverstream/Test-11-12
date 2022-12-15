@@ -30,7 +30,7 @@ export const Input: FC<TInput> = ({
         <div className={styles.container}>
           <input name={name} type={type}
             minLength={minlength} maxLength={maxlength}
-            value={value} className={`${styles.input} ${error && styles.border}`}
+            value={value} className={`${styles.mobile} ${error && styles.border}`}
             placeholder={placeholder}
             onChange={onChange}
             required
