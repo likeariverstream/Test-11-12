@@ -10,10 +10,8 @@ html {
 
 body {
   margin: 0 auto;
-  max-width: 1440px;
   height: 1024px;
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
