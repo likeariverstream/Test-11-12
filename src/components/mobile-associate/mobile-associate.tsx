@@ -11,10 +11,10 @@ export const MobileAssociate = () => {
 
   return (
     <div className={styles.container}>
-      <caption className={styles.caption}>
+      <div className={styles.caption}>
         <h3 className={styles.title}>{`${user?.first_name} ${user?.last_name}`}</h3>
         <p className={styles.subtitle}>{status}</p>
-      </caption>
+      </div>
       <div className={styles.box}>
         <img className={styles.image} src={user?.avatar} alt={`${user?.first_name} ${user?.last_name}`} />
         </div>

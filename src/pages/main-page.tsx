@@ -13,7 +13,7 @@ export const MainPage = () => {
   if (!isRegistred) {
     return <Redirect to={routes.register} />
   }
-  
+
   return (
     <>
       <Header />

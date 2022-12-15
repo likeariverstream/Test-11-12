@@ -18,8 +18,14 @@ const usersSlice = createSlice({
     })
     builder.addMatcher(getUsersThunk.fulfilled.match, (state, action) => {
       state.isGetted = true;
-      state.page = action.payload.page;
-      state.data = action.payload.data;
+      if (action.payload.page === 1) {
+        state.page = action.payload.page;
+        state.data = action.payload.data;
+      }
+      if (action.payload.page !== 1) {
+        state.page = action.payload.page;
+        state.data = [...state.data, ...action.payload.data];
+      }
     })
     builder.addMatcher(getUsersThunk.rejected.match, (state) => {
       state.isGetted = false

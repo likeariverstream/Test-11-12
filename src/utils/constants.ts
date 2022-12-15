@@ -8,7 +8,8 @@ export const routes = {
 
 export const config = {
   users: {
-    url: 'https://reqres.in/api/users'
+    url: 'https://reqres.in/api/users',
+    endPoint: '/?page='
 
   },
   register: {

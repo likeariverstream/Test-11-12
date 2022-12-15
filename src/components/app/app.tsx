@@ -12,10 +12,12 @@ import { useDispatch } from '../../utils/hooks';
 import { getUsersThunk } from '../../store/thunks/users';
 
 export const App = () => {
+  
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(getUsersThunk());
+    dispatch(getUsersThunk(1));
+    dispatch(getUsersThunk(2));
   }, [])
 
   return (
@@ -44,6 +46,6 @@ export const App = () => {
           <MobileMainPage />
         </MediaQuery>
       </Route>
-    </Switch>
+    </Switch >
   );
 }
