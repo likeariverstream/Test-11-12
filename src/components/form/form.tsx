@@ -1,4 +1,4 @@
-import React, { FC, FormEventHandler } from "react";
+import React, { FormEventHandler } from "react";
 import styles from './form.module.css'
 import { Input } from "../input/input";
 import { Button } from "../button/button";
