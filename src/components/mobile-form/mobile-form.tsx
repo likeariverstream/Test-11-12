@@ -1,15 +1,30 @@
-import React, { FC } from "react";
+import React, { FC, FormEventHandler } from "react";
 import styles from './mobile-form.module.css'
 import { Input } from "../input/input";
 import { Button } from "../button/button";
 import { useFormAndValidation } from '../../utils/hooks';
+import { useDispatch } from "../../utils/hooks";
+import { registerThunk } from "../../store/thunks/register";
 
 export const MobileForm: FC = () => {
 
-  const { values, handleChange, errors, isValid } = useFormAndValidation()
+  const dispatch = useDispatch();
+
+  const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation();
+  const { email, password, name } = values;
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    const user = {
+      email,
+      password,
+      name
+    }
+    dispatch(registerThunk(user));
+    resetForm();
+  }
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.container}>
         <h3 className={styles.heading}>Регистрация</h3>
         <p className={styles.text}>Имя</p>
@@ -20,8 +35,8 @@ export const MobileForm: FC = () => {
           onChange={handleChange} />
         <p className={styles.text}>Электронная почта</p>
         <Input isValid name="email"
-          type="email" value={values.email}
-          error={errors.email || ''}
+          type="email" value={values.email || ''}
+          error={errors.email}
           placeholder={`example@mail.ru`}
           onChange={handleChange} />
         <p className={styles.text}>Пароль</p>
