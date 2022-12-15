@@ -12,9 +12,8 @@
   padding-top: 48px;
   padding-bottom: 48px;
   width: 1440px;
-  display: grid;
-  grid-template-columns: repeat(4, 305px);
-  grid-auto-rows: 263px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   column-gap: 20px;

@@ -1,15 +1,23 @@
 import React from 'react';
-import { RegistrationPage } from '../../pages/registration-page';
+import { RegisterPage } from '../../pages/register-page';
 import { Switch, Route } from 'react-router';
 import { routes } from '../../utils/constants';
 import { MainPage } from '../../pages/main-page';
 import { AssociatePage } from '../../pages/associate-page';
 import MediaQuery from 'react-responsive';
-import { MobileRegistrationPage } from '../../pages/mobile-registration-page';
+import { MobileRegisterPage } from '../../pages/mobile-register-page';
 import { MobileMainPage } from '../../pages/mobile-main-page';
 import { MobileAssociatePage } from '../../pages/mobile-associate-page';
+import { useDispatch } from '../../utils/hooks';
+import { getUsersThunk } from '../../store/thunks/users';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(getUsersThunk());
+  }, [])
+
   return (
     <Switch>
       <Route path={`/associate/:id`} exact>
@@ -20,12 +28,12 @@ export const App = () => {
           <MobileAssociatePage />
         </MediaQuery>
       </Route>
-      <Route path={routes.registration}>
+      <Route path={routes.register}>
         <MediaQuery minWidth={500}>
-          <RegistrationPage />
+          <RegisterPage />
         </MediaQuery>
         <MediaQuery maxWidth={500}>
-          <MobileRegistrationPage />
+          <MobileRegisterPage />
         </MediaQuery>
       </Route>
       <Route path={routes.main} exact>
@@ -35,7 +43,6 @@ export const App = () => {
         <MediaQuery maxWidth={500}>
           <MobileMainPage />
         </MediaQuery>
-
       </Route>
     </Switch>
   );

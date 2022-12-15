@@ -1,16 +1,22 @@
 import React from "react";
 import styles from './associate-page.module.css';
 import { Header } from "../components/header/header";
+import { description, phone } from "../utils/constants";
+import { useSelector } from "../utils/hooks";
+import { useParams } from "react-router";
 
 export const AssociatePage = () => {
-  const description = `Клиенты видят в нем эксперта по вопросам разработки комплексных решений финансовых продуктов, включая такие аспекты, как организационная структура, процессы, аналитика и ИТ-компоненты. Он помогает клиентам лучше понимать структуру рисков их бизнеса, улучшать процессы за счет применения новейших технологий и увеличивать продажи, используя самые современные аналитические инструменты. В работе с клиентами недостаточно просто решить конкретную проблему или помочь справиться с трудностями. Не менее важно уделять внимание обмену знаниями: "Один из самых позитивных моментов — это осознание того, что ты помог клиенту перейти на совершенно новый уровень компетентности, уверенность в том, что после окончания проекта у клиента есть все необходимое, чтобы дальше развиваться самостоятельно". Помимо разнообразных проектов для клиентов финансового сектора, Королев ведет активную предпринимательскую деятельность. Он является совладельцем сети клиник эстетической медицины в Швейцарии, предлагающей инновационный подход к красоте, а также инвестором других бизнес-проектов.`
-  const phone = '+7 (954) 333-44-55';
-  const mail = 'sykfafkar@gmail.com'
+
+  const { data } = useSelector(store => store.users);
+  const { id } = useParams<{ id: string }>();
+  const user = data.find(i => i.id === Number(id));
+
   return (
     <>
       <Header />
       <main className={styles.main}>
-        <p className={styles.description}>{description}</p>
+        <p className={styles.description}>
+          {description(`${user?.first_name} ${user?.last_name}`)}</p>
         <section className={styles.contacts}>
           <div className={styles.box}>
             <button className={styles.phone}></button>
@@ -18,7 +24,7 @@ export const AssociatePage = () => {
             </p></div>
           <div className={styles.box}>
             <button className={styles.mail}></button>
-            <p className={styles.text}>{mail}
+            <p className={styles.text}>{user?.email}
             </p></div>
         </section>
       </main>

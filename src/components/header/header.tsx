@@ -3,16 +3,23 @@ import styles from './header.module.css';
 import { useLocation, useHistory } from "react-router";
 import { Associate } from "../associate/associate";
 import { routes } from "../../utils/constants";
+import { logoutUser } from "../../store/reducers/register";
+import { useDispatch } from "../../utils/hooks";
 
 export const Header = () => {
-  const history = useHistory()
+  const history = useHistory();
+  const dispatch = useDispatch();
   const main = useLocation().pathname === '/';
   const handleBack = React.useCallback(() => {
-    history.goBack()
+    history.goBack();
   }, [history])
+
   const handleClose = React.useCallback(() => {
-    history.push(routes.registration)
-  }, [history])
+    dispatch(logoutUser());
+    localStorage.removeItem('token');
+    history.push(routes.register);
+  }, [history, dispatch])
+
   return (
     <header className={styles.header}>
       <div className={styles.box}>

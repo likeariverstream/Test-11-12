@@ -53,6 +53,10 @@
   transition: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+.mobile {
+  background: rgba(103, 99, 99, 0.8)
+}
+
 .mobile:hover {
   cursor: pointer;
   opacity: 0.7;
