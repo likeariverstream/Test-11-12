@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Test-11-12/static/css/main.6a0b807c.css",
-    "main.js": "/Test-11-12/static/js/main.3f29f7da.js",
+    "main.css": "/Test-11-12/static/css/main.9b7ab5e3.css",
+    "main.js": "/Test-11-12/static/js/main.43e5c4d5.js",
     "static/media/mobile-close.svg": "/Test-11-12/static/media/mobile-close.e3febb0a52b2929a9f47.svg",
     "static/media/arrow.svg": "/Test-11-12/static/media/arrow.050c724a5e29dff2932a.svg",
     "static/media/phone.svg": "/Test-11-12/static/media/phone.633ddd5e63acb10afcea.svg",
@@ -10,11 +10,12 @@
     "static/media/mail.svg": "/Test-11-12/static/media/mail.0bad0d25ea2b0cfb6c5e.svg",
     "static/media/like-active.svg": "/Test-11-12/static/media/like-active.11b44be12685415406f5.svg",
     "static/media/like.svg": "/Test-11-12/static/media/like.061e171d2a52e699ffb3.svg",
-    "main.6a0b807c.css.map": "/Test-11-12/static/css/main.6a0b807c.css.map",
-    "main.3f29f7da.js.map": "/Test-11-12/static/js/main.3f29f7da.js.map"
+    "static/media/modal-close.svg": "/Test-11-12/static/media/modal-close.467b2d639dca5069c936.svg",
+    "main.9b7ab5e3.css.map": "/Test-11-12/static/css/main.9b7ab5e3.css.map",
+    "main.43e5c4d5.js.map": "/Test-11-12/static/js/main.43e5c4d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a0b807c.css",
-    "static/js/main.3f29f7da.js"
+    "static/css/main.9b7ab5e3.css",
+    "static/js/main.43e5c4d5.js"
   ]
 }
