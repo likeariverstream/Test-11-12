@@ -5,7 +5,7 @@ import { routes } from "../../utils/constants";
 import { MobileAssociate } from "../mobile-associate/mobile-associate";
 import { useDispatch } from "../../utils/hooks";
 import { logoutUser } from "../../store/reducers/register";
-import { specialistsDscription } from "../../utils/constants";
+import { headerDescription } from "../../utils/constants";
 
 export const MobileHeader = () => {
   const history = useHistory();
@@ -34,7 +34,7 @@ export const MobileHeader = () => {
         <button className={styles.close} style={!main ? { marginBottom: 'auto' } : undefined}
           onClick={handleClose}></button></div>
       {main && <><h3 className={styles.heading}>Наша команда</h3>
-        <p className={styles.text}>{specialistsDscription}</p></>}
+        <p className={styles.text}>{headerDescription}</p></>}
     </header>
   )
 }

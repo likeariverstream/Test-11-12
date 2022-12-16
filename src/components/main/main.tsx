@@ -2,11 +2,13 @@ import React from 'react';
 import styles from './main.module.css'
 import { Card } from '../card/card';
 import { usePagination } from '../../utils/hooks';
+import { mainPageLimit } from '../../utils/constants';
 
 export const Main = () => {
-  const pageLimit = 2;
   const savedPage = JSON.parse(localStorage.getItem('page') as string) || 1
-  const mainPage = savedPage > pageLimit ? Math.ceil(savedPage / pageLimit) : savedPage
+  const mainPage = savedPage > mainPageLimit
+    ? Math.ceil(savedPage / mainPageLimit)
+    : savedPage;
   const { array, handleChangePage } = usePagination(8, mainPage);
 
   return (

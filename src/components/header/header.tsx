@@ -5,6 +5,7 @@ import { Associate } from "../associate/associate";
 import { routes } from "../../utils/constants";
 import { logoutUser } from "../../store/reducers/register";
 import { useDispatch } from "../../utils/hooks";
+import { headerDescription } from "../../utils/constants";
 
 export const Header = () => {
   const history = useHistory();
@@ -32,7 +33,7 @@ export const Header = () => {
         <button className={styles.button} style={!main ? { marginBottom: 'auto' } : undefined}
           onClick={handleClose}>Выход</button></div>
       {main && <><h3 className={styles.heading}>Наша команда</h3>
-        <p className={styles.text}>Это опытные специалисты, хорошо разбирающиеся во всех задачах, которые ложатся на их плечи, и умеющие находить выход из любых, даже самых сложных ситуаций. </p></>}
+        <p className={styles.text}>{headerDescription} </p></>}
     </header>
   )
 }

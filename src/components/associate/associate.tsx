@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useHistory, useLocation } from 'react-router';
+import { useParams } from 'react-router';
 import styles from './associate.module.css'
 import { useSelector } from '../../utils/hooks';
 import { status } from '../../utils/constants';

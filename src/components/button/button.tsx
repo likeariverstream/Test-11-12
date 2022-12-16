@@ -8,10 +8,12 @@ export const Button: FC<TButton> = ({ title, isValid, type }) => {
   return (
     <>
       <MediaQuery minWidth={500}>
-        <button type={type} disabled={!isValid ? true : false} className={styles.button}>{title}</button>
+        <button type={type} disabled={!isValid ? true : false} className={styles.button}>{title}
+        </button>
       </MediaQuery>
       <MediaQuery maxWidth={500}>
-        <button type={type} disabled={!isValid ? true : false} className={styles.mobile}>{title}</button>
+        <button type={type} disabled={!isValid ? true : false} className={styles.mobile}>{title}
+        </button>
       </MediaQuery>
     </>
   )

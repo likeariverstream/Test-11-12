@@ -11,7 +11,7 @@ export const MobileAssociate = () => {
   const { data } = useSelector(store => store.users);
   const { id } = useParams<{ id: string }>()
   const user = data.find(i => i.id === Number(id))
-  
+
   const handleChangeImage = () => {
     setIsOpen(!isOpen)
   }
@@ -27,7 +27,8 @@ export const MobileAssociate = () => {
           <p className={styles.subtitle}>{status}</p>
         </div>
         <div className={styles.box}>
-          <img className={styles.image} src={user?.avatar} alt={`${user?.first_name} ${user?.last_name}`}
+          <img className={styles.image}
+            src={user?.avatar} alt={`${user?.first_name} ${user?.last_name}`}
             onClick={handleChangeImage} />
         </div>
       </div>}

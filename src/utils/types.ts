@@ -1,4 +1,3 @@
-import { useLocation } from "react-router";
 import React, { ReactNode } from 'react';
 export type TRequestOptions = {
   method?: string,
@@ -66,12 +65,6 @@ export type TInput = {
   error?: string
   isValid?: boolean
   pattern?: string
-}
-
-export type TLocation = ReturnType<typeof useLocation>
-
-export type TUseLocation = {
-  [key: string]: string | null | TLocation
 }
 
 export type TModalOverlay = {
