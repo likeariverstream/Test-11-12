@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 64px;
+  margin-left: 14px;
 }
 
 .box {
@@ -24,6 +25,12 @@
   border: 0;
   border-radius: 100px;
   object-fit: cover;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.image:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .caption {

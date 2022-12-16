@@ -6,11 +6,10 @@ import { useSelector } from "../utils/hooks";
 import { useParams } from "react-router";
 
 export const AssociatePage = () => {
-
   const { data } = useSelector(store => store.users);
   const { id } = useParams<{ id: string }>();
   const user = data.find(i => i.id === Number(id));
-
+  
   return (
     <>
       <Header />

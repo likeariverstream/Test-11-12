@@ -1,6 +1,6 @@
 import React from 'react';
 import { RegisterPage } from '../../pages/register-page';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, useLocation } from 'react-router';
 import { routes } from '../../utils/constants';
 import { MainPage } from '../../pages/main-page';
 import { AssociatePage } from '../../pages/associate-page';
@@ -12,7 +12,6 @@ import { useDispatch } from '../../utils/hooks';
 import { getUsersThunk } from '../../store/thunks/users';
 
 export const App = () => {
-  
   const dispatch = useDispatch();
 
   React.useEffect(() => {

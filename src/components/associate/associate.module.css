@@ -20,6 +20,12 @@
   border: 0;
   border-radius: 100px;
   object-fit: cover;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.image:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .caption {
@@ -46,4 +52,5 @@
   font-size: 32px;
   line-height: 38px;
   color: #FFFFFF;
+  margin-left: 10px;
 }

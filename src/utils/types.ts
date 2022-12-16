@@ -1,4 +1,5 @@
-
+import { useLocation } from "react-router";
+import React, { ReactNode } from 'react';
 export type TRequestOptions = {
   method?: string,
   headers: {
@@ -59,10 +60,29 @@ export type TInput = {
   value?: string,
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   name?: string
-  type: 'text' | 'email' | 'password'
+  type: 'text' | 'email' | 'password' | 'url'
   minlength?: number
   maxlength?: number
   error?: string
   isValid?: boolean
   pattern?: string
+}
+
+export type TLocation = ReturnType<typeof useLocation>
+
+export type TUseLocation = {
+  [key: string]: string | null | TLocation
+}
+
+export type TModalOverlay = {
+  closeModal: () => void
+}
+
+export type TModal = {
+  closeModal: () => void
+  children: ReactNode
+}
+
+export type TChangeAvatar = {
+  closeModal: () => void
 }

@@ -4,12 +4,14 @@ import { Card } from '../card/card';
 import { usePagination } from '../../utils/hooks';
 
 export const MobileMain = () => {
-  const { handleChangePage, array } = usePagination(4)
+
+  const savedPage = JSON.parse(localStorage.getItem('page') as string) || 1
+  const { handleChangePage, array } = usePagination(4, savedPage)
 
   return (
     <main className={styles.main}>
       <section className={styles.content}>
-        {array.map((element, index) => {
+        {array.map((element) => {
           return <Card key={element.id}
             id={element.id}
             firstName={element.first_name}

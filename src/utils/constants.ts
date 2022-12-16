@@ -3,7 +3,8 @@ export const definePassword = "pistol"
 
 export const routes = {
   register: '/register',
-  main: '/'
+  main: '/',
+  associate: 'associate/'
 }
 
 export const config = {

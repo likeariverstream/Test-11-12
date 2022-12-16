@@ -34,23 +34,27 @@ export const useFormAndValidation = () => {
   return { values, handleChange, errors, isValid, resetForm, setValues, setIsValid };
 }
 
-export const usePagination = (cardLimit: number) => {
-  const [currentPage, setCurrentPage] = React.useState(1)
+export const usePagination = (cardLimit: number, savedPage: number) => {
   const { data } = useSelector(store => store.users);
   const totalPages = Math.ceil(data.length / cardLimit)
 
+  const [currentPage, setCurrentPage] = React.useState(savedPage);
   const handleChangePage = () => {
     currentPage < totalPages
       ? setCurrentPage(currentPage + 1)
-      : setCurrentPage(currentPage - 1)
+      : setCurrentPage(1);
+
+    currentPage < totalPages
+      ? localStorage.setItem('page', JSON.stringify(currentPage + 1))
+      : localStorage.setItem('page', JSON.stringify(1));
   }
 
   const firstIndex = currentPage * cardLimit - cardLimit;
   const lastIndex = currentPage * cardLimit;
-  const array = data.slice(firstIndex, lastIndex)
+  const array = data.slice(firstIndex, lastIndex);
 
   return {
-    array, handleChangePage, firstIndex, lastIndex
+    array, handleChangePage, firstIndex, lastIndex, totalPages
   }
 }
 

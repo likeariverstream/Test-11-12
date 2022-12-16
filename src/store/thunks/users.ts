@@ -7,7 +7,6 @@ export const getUsersThunk = createAsyncThunk(
   async (page: number) => {
     try {
       const data = await request(`${config.users.url}${config.users.endPoint}${page}`);
-      console.log(data)
       return data
     } catch (err) {
       return console.warn(err);

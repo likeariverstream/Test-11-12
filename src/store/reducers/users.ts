@@ -11,7 +11,11 @@ const initialState: TUsersInitialState = {
 const usersSlice = createSlice({
   name: 'users',
   initialState,
-  reducers: {},
+  reducers: {
+    changeAvatar: (state, action) => {
+      state.data = state.data.map(element => element.id === action.payload.id ? action.payload: element)
+    }
+  },
   extraReducers: (builder) => {
     builder.addMatcher(getUsersThunk.pending.match, (state) => {
       state.isGetted = false
@@ -34,3 +38,5 @@ const usersSlice = createSlice({
 })
 
 export const usersReducer = usersSlice.reducer;
+
+export const { changeAvatar } = usersSlice.actions;
